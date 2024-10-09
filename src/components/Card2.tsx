@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, Typography, Button, Box} from "@mui/material";
+import {Typography, Button, Box} from "@mui/material";
 
 interface PlanCardProps {
   title: string;
@@ -15,23 +15,17 @@ const PlanCard: React.FC<PlanCardProps> = ({
   isCurrentPlan,
 }) => {
   return (
-    <Card
+    <Box
       sx={{
-        borderRadius: "12px",
-        boxShadow: 1,
         padding: 2,
         maxWidth: 300,
-        border: "1px solid #e0e0e0",
       }}>
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
         }}>
-        <Box
-          sx={{
-            justifyIte: "flex-start",
-          }}>
+        <Box>
           <Typography variant='h6' sx={{fontWeight: "bold"}}>
             {title}
           </Typography>
@@ -80,7 +74,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
           - {feature}
         </Typography>
       ))}
-    </Card>
+    </Box>
   );
 };
 

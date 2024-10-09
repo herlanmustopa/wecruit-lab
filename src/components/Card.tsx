@@ -1,4 +1,4 @@
-import {Card, CardContent, Typography, Button} from "@mui/material";
+import {Card} from "@mui/material";
 
 interface CardProps {
   title?: string;
@@ -7,39 +7,16 @@ interface CardProps {
   currentPlan?: boolean;
   children?: React.ReactNode;
 }
-const Cards = ({title, price, features, currentPlan, children}: CardProps) => {
+const Cards = ({children}: CardProps) => {
   return (
-    <Card variant='outlined' sx={{minWidth: "auto", borderRadius: "16px"}}>
-      <CardContent>
-        <Typography variant='h5' component='div'>
-          {title}
-        </Typography>
-        <Typography variant='h4' component='div' sx={{margin: "10px 0"}}>
-          {price}
-        </Typography>
-        {features?.map((feature, index) => (
-          <Typography key={index} variant='body2' color='text.secondary'>
-            {feature}
-          </Typography>
-        ))}
-        {currentPlan ? (
-          <Button
-            variant='outlined'
-            sx={{
-              backgroundColor: "#3FA281",
-            }}>
-            현재 플랜
-          </Button>
-        ) : (
-          <Button
-            variant='contained'
-            sx={{
-              backgroundColor: "#3FA281",
-            }}>
-            무료로 시작
-          </Button>
-        )}
-      </CardContent>
+    <Card
+      variant='outlined'
+      sx={{
+        minWidth: "auto",
+        borderRadius: "16px",
+        justifyItems: "center",
+        padding: 2,
+      }}>
       {children}
     </Card>
   );

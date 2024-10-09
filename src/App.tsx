@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid2";
 import Carousel from "./components/Carousel";
 import PlanCard from "./components/Card2";
 import {Box} from "@mui/material";
+import Cards from "./components/Card";
 
 const App: React.FC = () => {
   const cardsData = [
@@ -51,46 +52,49 @@ const App: React.FC = () => {
     <div className='center-container'>
       <CustomAccordion
         title='프로 플랜으로 배출계산과 관리를 정교하게 해보세요!'
-        titleEnd='요금제 보기'
-        defaultExpanded>
+        titleEnd='요금제 보기'>
         <Grid container spacing={2}>
           <Grid size={4}>
-            <PlanCard
-              title='Essential'
-              price='무료'
-              features={["기본 기능", "제한된 사용자 수"]}
-              isCurrentPlan={true}
-            />{" "}
+            <Cards>
+              <PlanCard
+                title='Essential'
+                price='무료'
+                features={["기본 기능", "제한된 사용자 수"]}
+                isCurrentPlan={true}
+              />{" "}
+            </Cards>
           </Grid>
           <Grid size={8}>
-            <Box
-              sx={{
-                display: "flex",
-              }}>
-              <Grid size={10}>
-                <PlanCard
-                  title='Pro'
-                  price='월 50만원'
-                  features={["기본 기능", "제한된 사용자 수"]}
-                  isCurrentPlan={true}
+            <Cards>
+              <Box
+                sx={{
+                  display: "flex",
+                }}>
+                <Grid size={10}>
+                  <PlanCard
+                    title='Pro'
+                    price='월 50만원'
+                    features={["기본 기능", "제한된 사용자 수"]}
+                    isCurrentPlan={true}
+                  />
+                </Grid>
+                {/* <Grid size={6}> */}
+                <Carousel
+                  percentage={cardsData[activeIndex].percentage}
+                  total={cardsData[activeIndex].total}
+                  detailed={cardsData[activeIndex].detailed}
+                  increase={cardsData[activeIndex].increase}
+                  scope1_2={cardsData[activeIndex].scope1_2}
+                  detailedEmissions={cardsData[activeIndex].detailedEmissions}
+                  activeIndex={activeIndex}
+                  totalDots={cardsData.length}
+                  dataCards={cardsData}
+                  handlePrev={handlePrev}
+                  handleNext={handleNext}
                 />
-              </Grid>
-              {/* <Grid size={6}> */}
-              <Carousel
-                percentage={cardsData[activeIndex].percentage}
-                total={cardsData[activeIndex].total}
-                detailed={cardsData[activeIndex].detailed}
-                increase={cardsData[activeIndex].increase}
-                scope1_2={cardsData[activeIndex].scope1_2}
-                detailedEmissions={cardsData[activeIndex].detailedEmissions}
-                activeIndex={activeIndex}
-                totalDots={cardsData.length}
-                dataCards={cardsData}
-                handlePrev={handlePrev}
-                handleNext={handleNext}
-              />
-              {/* </Grid> */}
-            </Box>
+                {/* </Grid> */}
+              </Box>
+            </Cards>
           </Grid>
         </Grid>
       </CustomAccordion>

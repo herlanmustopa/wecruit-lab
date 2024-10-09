@@ -73,7 +73,7 @@ const Carousel: React.FC<CarouselProps> = ({
           sx={{
             position: "absolute",
             left: 5,
-            top: 180,
+            top: 150,
             transform: "translateY(-50%)",
             backgroundColor: "white",
             boxShadow: 1,
@@ -178,7 +178,7 @@ const Carousel: React.FC<CarouselProps> = ({
           sx={{
             position: "absolute",
             right: 5,
-            top: 180,
+            top: 150,
             transform: "translateY(-50%)",
             backgroundColor: "white",
             boxShadow: 1,

@@ -23,16 +23,25 @@ const PlanCard: React.FC<PlanCardProps> = ({
         maxWidth: 300,
         border: "1px solid #e0e0e0",
       }}>
-      <CardContent>
-        <Typography variant='h6' component='div' sx={{fontWeight: "bold"}}>
-          {title}
-        </Typography>
-        <Typography
-          variant='h4'
-          component='div'
-          sx={{fontWeight: "bold", color: "#3c6e47", marginBottom: 1}}>
-          {price}
-        </Typography>
+      <CardContent
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}>
+        <Box
+          sx={{
+            justifyItems: "flex-start",
+          }}>
+          <Typography variant='h6' component='div' sx={{fontWeight: "bold"}}>
+            {title}
+          </Typography>
+          <Typography
+            variant='h4'
+            component='div'
+            sx={{fontWeight: "bold", color: "#3c6e47", marginBottom: 1}}>
+            {price}
+          </Typography>
+        </Box>
 
         {isCurrentPlan && (
           <Button

@@ -2,7 +2,7 @@ import React from "react";
 import {
   Box,
   Typography,
-  Card,
+  //   Card,
   CardContent,
   Divider,
   Container,
@@ -72,7 +72,7 @@ const Carousel: React.FC<CarouselProps> = ({
           onClick={handlePrev}
           sx={{
             position: "absolute",
-            left: 75,
+            left: 5,
             top: 180,
             transform: "translateY(-50%)",
             backgroundColor: "white",
@@ -85,20 +85,31 @@ const Carousel: React.FC<CarouselProps> = ({
           }}>
           <ChevronLeftIcon />
         </IconButton>
-        <Card sx={{borderRadius: "12px", boxShadow: 2}}>
+        <Box sx={{borderRadius: "12px", border: 1, borderColor: "black"}}>
           <CardContent>
+            <Typography variant='body2' color='textSecondary'>
+              Scope 1, 2 총 배출량
+            </Typography>
+            <Typography
+              variant='h6'
+              component='div'
+              sx={{fontWeight: "bold", marginBottom: 1}}>
+              {scope1_2}
+            </Typography>
+
+            <Divider sx={{opacity: 0.6, marginBottom: 5}} />
             <Grid container spacing={2}>
               <Grid item xs={6}>
                 <Box
                   sx={{
                     position: "relative",
-                    display: "inline-flex",
                     justifyContent: "center",
+                    display: "flex",
                   }}>
                   <Doughnut
                     data={data}
                     options={{
-                      cutout: "80%",
+                      cutout: "90%",
                       responsive: true,
                       maintainAspectRatio: true,
                     }}
@@ -129,18 +140,6 @@ const Carousel: React.FC<CarouselProps> = ({
 
               <Grid item xs={6}>
                 <Box sx={{paddingLeft: 2}}>
-                  <Typography variant='body2' color='textSecondary'>
-                    Scope 1, 2 총 배출량
-                  </Typography>
-                  <Typography
-                    variant='h6'
-                    component='div'
-                    sx={{fontWeight: "bold", marginBottom: 1}}>
-                    {scope1_2}
-                  </Typography>
-
-                  <Divider sx={{opacity: 0.6}} />
-
                   <Typography
                     variant='body2'
                     color='textSecondary'
@@ -163,13 +162,13 @@ const Carousel: React.FC<CarouselProps> = ({
               </Grid>
             </Grid>
           </CardContent>
-        </Card>
+        </Box>
 
         <IconButton
           onClick={handleNext}
           sx={{
             position: "absolute",
-            right: 75,
+            right: 5,
             top: 180,
             transform: "translateY(-50%)",
             backgroundColor: "white",

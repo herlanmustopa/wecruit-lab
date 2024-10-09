@@ -5,6 +5,7 @@ import "./App.css";
 import Grid from "@mui/material/Grid2";
 import Carousel from "./components/Carousel";
 import PlanCard from "./components/Card2";
+import {Box} from "@mui/material";
 
 const App: React.FC = () => {
   const cardsData = [
@@ -62,19 +63,34 @@ const App: React.FC = () => {
             />{" "}
           </Grid>
           <Grid size={8}>
-            <Carousel
-              percentage={cardsData[activeIndex].percentage}
-              total={cardsData[activeIndex].total}
-              detailed={cardsData[activeIndex].detailed}
-              increase={cardsData[activeIndex].increase}
-              scope1_2={cardsData[activeIndex].scope1_2}
-              detailedEmissions={cardsData[activeIndex].detailedEmissions}
-              activeIndex={activeIndex}
-              totalDots={cardsData.length}
-              dataCards={cardsData}
-              handlePrev={handlePrev}
-              handleNext={handleNext}
-            />
+            <Box
+              sx={{
+                display: "flex",
+              }}>
+              <Grid size={10}>
+                <PlanCard
+                  title='Pro'
+                  price='월 50만원'
+                  features={["기본 기능", "제한된 사용자 수"]}
+                  isCurrentPlan={true}
+                />
+              </Grid>
+              {/* <Grid size={6}> */}
+              <Carousel
+                percentage={cardsData[activeIndex].percentage}
+                total={cardsData[activeIndex].total}
+                detailed={cardsData[activeIndex].detailed}
+                increase={cardsData[activeIndex].increase}
+                scope1_2={cardsData[activeIndex].scope1_2}
+                detailedEmissions={cardsData[activeIndex].detailedEmissions}
+                activeIndex={activeIndex}
+                totalDots={cardsData.length}
+                dataCards={cardsData}
+                handlePrev={handlePrev}
+                handleNext={handleNext}
+              />
+              {/* </Grid> */}
+            </Box>
           </Grid>
         </Grid>
       </CustomAccordion>

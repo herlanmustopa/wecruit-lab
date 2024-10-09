@@ -4,6 +4,7 @@ import "./App.css";
 import Cards from "./components/Card";
 import Grid from "@mui/material/Grid2";
 import Carousel from "./components/Carousel";
+import PlanCard from "./components/Card2";
 
 const App: React.FC = () => {
   const cardsData = [
@@ -53,17 +54,19 @@ const App: React.FC = () => {
         defaultExpanded>
         <Grid container spacing={2}>
           <Grid size={4}>
-            <Cards
+            <PlanCard
               title='기본 요금제'
               price='₩0'
               features={["기본 기능", "제한된 사용자 수"]}
+              isCurrentPlan={true}
             />{" "}
           </Grid>
           <Grid size={8}>
             <Cards
-              title='기본 요금제'
-              price='₩0'
-              features={["기본 기능", "제한된 사용자 수"]}>
+            // title='기본 요금제'
+            // price='₩0'
+            // features={["기본 기능", "제한된 사용자 수"]}
+            >
               <Carousel
                 percentage={cardsData[activeIndex].percentage}
                 total={cardsData[activeIndex].total}

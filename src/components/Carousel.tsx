@@ -128,9 +128,18 @@ const Carousel: React.FC<CarouselProps> = ({
                       sx={{fontWeight: "bold"}}>
                       {percentage}%
                     </Typography>
-                    <Typography variant='caption' component='div'>
-                      {detailed} / {total}
-                    </Typography>
+                    <Box sx={{display: "flex", justifyContent: "center"}}>
+                      <Typography variant='caption'> {detailed} </Typography>
+                      <Typography variant='caption'> / </Typography>
+                      <Typography
+                        variant='caption'
+                        sx={{
+                          color: "#B2B2B3",
+                        }}>
+                        {" "}
+                        {total}{" "}
+                      </Typography>
+                    </Box>
                     <Typography variant='caption' color='green'>
                       ⬆ {increase}% 전년도 대비 증가
                     </Typography>

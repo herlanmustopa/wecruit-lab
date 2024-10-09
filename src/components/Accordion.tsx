@@ -16,14 +16,12 @@ interface CustomAccordionProps {
   title: React.ReactNode;
   titleEnd?: React.ReactNode;
   actions?: Action[];
-  defaultExpanded?: boolean;
   children: React.ReactNode;
 }
 
 const CustomAccordion: React.FC<CustomAccordionProps> = ({
   title,
   titleEnd,
-  defaultExpanded = false,
   children,
 }) => {
   return (
@@ -35,7 +33,6 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({
         maxWidth: "100%",
       }}>
       <Accordion
-        defaultExpanded={defaultExpanded}
         square={true}
         sx={{
           borderRadius: "16px",

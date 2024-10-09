@@ -38,7 +38,7 @@ const App: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % cardsData.length); // Loop back to first card
+    setActiveIndex((prevIndex) => (prevIndex + 1) % cardsData.length);
   };
 
   const handlePrev = () => {

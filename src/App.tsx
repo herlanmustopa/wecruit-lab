@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import CustomAccordion from "./components/Accordion";
 import "./App.css";
-import Cards from "./components/Card";
+// import Cards from "./components/Card";
 import Grid from "@mui/material/Grid2";
 import Carousel from "./components/Carousel";
 import PlanCard from "./components/Card2";
@@ -55,32 +55,26 @@ const App: React.FC = () => {
         <Grid container spacing={2}>
           <Grid size={4}>
             <PlanCard
-              title='기본 요금제'
-              price='₩0'
+              title='Essential'
+              price='무료'
               features={["기본 기능", "제한된 사용자 수"]}
               isCurrentPlan={true}
             />{" "}
           </Grid>
           <Grid size={8}>
-            <Cards
-            // title='기본 요금제'
-            // price='₩0'
-            // features={["기본 기능", "제한된 사용자 수"]}
-            >
-              <Carousel
-                percentage={cardsData[activeIndex].percentage}
-                total={cardsData[activeIndex].total}
-                detailed={cardsData[activeIndex].detailed}
-                increase={cardsData[activeIndex].increase}
-                scope1_2={cardsData[activeIndex].scope1_2}
-                detailedEmissions={cardsData[activeIndex].detailedEmissions}
-                activeIndex={activeIndex}
-                totalDots={cardsData.length}
-                dataCards={cardsData}
-                handlePrev={handlePrev}
-                handleNext={handleNext}
-              />
-            </Cards>
+            <Carousel
+              percentage={cardsData[activeIndex].percentage}
+              total={cardsData[activeIndex].total}
+              detailed={cardsData[activeIndex].detailed}
+              increase={cardsData[activeIndex].increase}
+              scope1_2={cardsData[activeIndex].scope1_2}
+              detailedEmissions={cardsData[activeIndex].detailedEmissions}
+              activeIndex={activeIndex}
+              totalDots={cardsData.length}
+              dataCards={cardsData}
+              handlePrev={handlePrev}
+              handleNext={handleNext}
+            />
           </Grid>
         </Grid>
       </CustomAccordion>

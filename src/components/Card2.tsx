@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, CardContent, Typography, Button, Box} from "@mui/material";
+import {Card, Typography, Button, Box} from "@mui/material";
 
 interface PlanCardProps {
   title: string;
@@ -23,21 +23,20 @@ const PlanCard: React.FC<PlanCardProps> = ({
         maxWidth: 300,
         border: "1px solid #e0e0e0",
       }}>
-      <CardContent
+      <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
         }}>
         <Box
           sx={{
-            justifyItems: "flex-start",
+            justifyIte: "flex-start",
           }}>
-          <Typography variant='h6' component='div' sx={{fontWeight: "bold"}}>
+          <Typography variant='h6' sx={{fontWeight: "bold"}}>
             {title}
           </Typography>
           <Typography
             variant='h4'
-            component='div'
             sx={{fontWeight: "bold", color: "#3c6e47", marginBottom: 1}}>
             {price}
           </Typography>
@@ -47,6 +46,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
           <Button
             variant='outlined'
             disabled
+            // fullWidth
             sx={{
               borderRadius: "10px",
               fontSize: "12px",
@@ -60,7 +60,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
             현재 플랜
           </Button>
         )}
-      </CardContent>
+      </Box>
       <Box
         sx={{
           backgroundColor: "#f7f7f7",

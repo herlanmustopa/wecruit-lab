@@ -75,8 +75,7 @@ const Carousel: React.FC<CarouselProps> = ({
             left: 5,
             top: 150,
             transform: "translateY(-50%)",
-            backgroundColor: "white",
-            boxShadow: 1,
+            backgroundColor: "#CADED2",
             borderRadius: "50%",
             "&:hover": {
               backgroundColor: "#f5f5f5",
@@ -85,7 +84,7 @@ const Carousel: React.FC<CarouselProps> = ({
           }}>
           <ChevronLeftIcon />
         </IconButton>
-        <Box sx={{borderRadius: "12px", border: 1, borderColor: "black"}}>
+        <Box sx={{borderRadius: "12px", border: 1, borderColor: "#CADED2"}}>
           <CardContent>
             <Typography variant='body2' color='textSecondary'>
               Scope 1, 2 총 배출량
@@ -180,8 +179,7 @@ const Carousel: React.FC<CarouselProps> = ({
             right: 5,
             top: 150,
             transform: "translateY(-50%)",
-            backgroundColor: "white",
-            boxShadow: 1,
+            backgroundColor: "#CADED2",
             borderRadius: "50%",
             "&:hover": {
               backgroundColor: "#f5f5f5",
